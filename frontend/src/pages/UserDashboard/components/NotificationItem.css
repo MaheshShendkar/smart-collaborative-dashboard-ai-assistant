@@ -1,0 +1,117 @@
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.notification-item.unread {
+  background-color: #eef6ff;
+  border-left: 4px solid #007bff;
+}
+
+.notification-item.read {
+  opacity: 0.8;
+}
+
+.icon-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-icon {
+  font-size: 1.6rem;
+}
+
+/* icon colors by type */
+.task-icon {
+  color: #007bff;
+}
+.ai-icon {
+  color: #8e44ad;
+}
+.system-icon {
+  color: #2ecc71;
+}
+.alert-icon {
+  color: #e74c3c;
+}
+.default-icon {
+  color: #555;
+}
+
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.message-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.meta-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.type-badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.type-badge.task {
+  background-color: #007bff;
+}
+.type-badge.ai {
+  background-color: #8e44ad;
+}
+.type-badge.system {
+  background-color: #2ecc71;
+}
+.type-badge.alert {
+  background-color: #e74c3c;
+}
+
+.mark-read-btn {
+  align-self: flex-start;
+  margin-top: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.2s;
+}
+
+.mark-read-btn:hover {
+  background-color: #0056b3;
+}
+
+.read-status {
+  color: #2ecc71;
+  font-size: 0.85rem;
+  font-weight: 500;
+}

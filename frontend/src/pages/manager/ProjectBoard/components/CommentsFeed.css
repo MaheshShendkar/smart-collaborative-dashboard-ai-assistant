@@ -1,0 +1,69 @@
+.comments-feed {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.comments-feed__list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.comment-card {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.comment-author {
+  font-weight: 600;
+}
+
+.comment-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.comments-feed__form textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.comments-feed__form button {
+  background: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.comments-feed__form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.delete-comment-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+
+.delete-comment-btn:hover {
+  color: #c0392b;
+}

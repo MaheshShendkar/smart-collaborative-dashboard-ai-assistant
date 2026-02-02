@@ -1,0 +1,72 @@
+.notification-panel {
+  width: 400px;
+  background: #121212;
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-left: 230px;
+    margin-top: 20px;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background-color: #4caf50;
+}
+
+.status-dot.offline {
+  background-color: #f44336;
+}
+
+.no-notifications {
+  color: #aaa;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.create-notification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.create-notification-form textarea,
+.create-notification-form select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.create-notification-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.create-notification-form button:hover {
+  background: #0056b3;
+}

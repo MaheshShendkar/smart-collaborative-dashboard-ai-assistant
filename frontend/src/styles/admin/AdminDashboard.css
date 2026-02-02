@@ -1,0 +1,208 @@
+/* .admin-container {
+  padding: 10px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.projects-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.badge.Pending {
+  background: #fde2e1;
+  color: #b91c1c;
+}
+.badge.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge.in-progress {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-edit {
+  background: #14b8a6;
+  color: #fff;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.btn-edit:hover { background: #0d9488; }
+
+.btn-delete {
+  background: #dc2626;
+  color: #fff;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+}
+.btn-delete:hover { background: #b91c1c; }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex; justify-content: center; align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  width: 420px;
+}
+
+.assign-box {
+  margin: 12px 0;
+}
+
+.checkbox-list {
+  border: 1px solid #ddd;
+  padding: 6px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-secondary {
+  background: #6b7280;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+}
+.btn-secondary:hover { background: #4b5563; }
+
+.no-data {
+  text-align: center;
+  color: #888;
+  padding: 15px;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+}
+
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tabs button.active {
+  background: #2563eb;
+  color: white;
+} */
+
+
+/* ===== Admin Dashboard Layout ===== */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f6f8fa;
+  font-family: Arial, sans-serif;
+}
+
+/* --- Top Bar --- */
+.admin-topbar {
+  background: #1e293b;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-topbar h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.tabs button {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin-left: 1.25rem;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border 0.2s;
+}
+
+.tabs button.active {
+  color: #fff;
+  border-bottom: 2px solid #38bdf8;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+}

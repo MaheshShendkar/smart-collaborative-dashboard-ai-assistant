@@ -1,0 +1,624 @@
+ /* body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+
+.manager-dashboard-spinner,
+.manager-dashboard-error {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+.manager-dashboard-error {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+}
+
+
+.manager-dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.manager-dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.manager-dashboard-navbar h1 {
+  margin: 0;
+}
+
+.manager-dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.manager-dashboard-user button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.manager-dashboard-user button:hover {
+  background-color: #c0392b;
+}
+
+
+.manager-dashboard-body {
+  display: flex;
+  flex: 1;
+}
+
+
+.manager-dashboard-sidebar {
+  width: 200px;
+  background-color: #34495e;
+  color: #fff;
+  padding: 20px;
+}
+
+.manager-dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.manager-dashboard-sidebar li {
+  margin-bottom: 15px;
+}
+
+.manager-dashboard-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.manager-dashboard-sidebar a.active,
+.manager-dashboard-sidebar a:hover {
+  background-color: #1abc9c;
+}
+
+
+.manager-dashboard-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #ecf0f1;
+}
+
+
+.manager-dashboard-create-btn {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background-color: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.manager-dashboard-create-btn:hover {
+  background-color: #16a085;
+}
+
+
+.manager-dashboard-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.manager-dashboard-modal {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  width: 500px;
+  max-width: 90%;
+}
+
+.manager-dashboard-modal label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.manager-dashboard-modal input,
+.manager-dashboard-modal select,
+.manager-dashboard-modal textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.manager-dashboard-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.manager-dashboard-modal-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manager-dashboard-modal-actions button[type="submit"] {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
+.manager-dashboard-modal-actions button[type="submit"]:hover {
+  background-color: #16a085;
+}
+
+.manager-dashboard-modal-actions button[type="button"] {
+  background-color: #bdc3c7;
+}
+
+.manager-dashboard-modal-actions button[type="button"]:hover {
+  background-color: #95a5a6;
+}
+
+
+.manager-dashboard-table-wrapper {
+  overflow-x: auto;
+}
+
+.manager-dashboard-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.manager-dashboard-table-wrapper th,
+.manager-dashboard-table-wrapper td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.manager-dashboard-table-wrapper th {
+  background-color: #34495e;
+  color: #fff;
+}
+
+.manager-dashboard-status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.manager-dashboard-status.completed {
+  background-color: #27ae60;
+}
+
+.manager-dashboard-status.in-progress {
+  background-color: #f39c12;
+}
+
+.manager-dashboard-status.pending {
+  background-color: #7f8c8d;
+}
+
+.manager-dashboard-table-wrapper td button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1abc9c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.manager-dashboard-table-wrapper td button:hover {
+  background-color: #16a085;
+}
+
+
+.manager-dashboard-empty {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+
+@media (max-width: 768px) {
+  .manager-dashboard-body {
+    flex-direction: column;
+  }
+
+  .manager-dashboard-sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .manager-dashboard-sidebar ul {
+    display: flex;
+    gap: 15px;
+  }
+
+  .manager-dashboard-main {
+    padding: 10px;
+  }
+} 
+
+ */
+
+
+ body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Spinner & Error */
+.manager-dashboard-spinner,
+.manager-dashboard-error {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+.manager-dashboard-error {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Layout */
+.manager-dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.manager-dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.manager-dashboard-navbar h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-icon {
+  font-size: 22px;
+}
+
+.manager-dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.manager-dashboard-user button {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.manager-dashboard-user button:hover {
+  background-color: #c0392b;
+}
+
+/* Body */
+.manager-dashboard-body {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.manager-dashboard-sidebar {
+  width: 200px;
+  background-color: #34495e;
+  color: #fff;
+  padding: 20px;
+}
+
+.manager-dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.manager-dashboard-sidebar li {
+  margin-bottom: 15px;
+}
+
+.manager-dashboard-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.manager-dashboard-sidebar a.active,
+.manager-dashboard-sidebar a:hover {
+  background-color: #1abc9c;
+}
+
+/* Main */
+.manager-dashboard-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #ecf0f1;
+}
+
+/* Buttons */
+.manager-dashboard-create-btn {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background-color: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.manager-dashboard-create-btn:hover {
+  background-color: #16a085;
+}
+
+/* Modal */
+.manager-dashboard-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.manager-dashboard-modal {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  width: 500px;
+  max-width: 90%;
+}
+
+.manager-dashboard-modal h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manager-dashboard-modal label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.manager-dashboard-modal input,
+.manager-dashboard-modal select,
+.manager-dashboard-modal textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.manager-dashboard-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.manager-dashboard-modal-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.manager-dashboard-modal-actions button[type="submit"] {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
+.manager-dashboard-modal-actions button[type="submit"]:hover {
+  background-color: #16a085;
+}
+
+.manager-dashboard-modal-actions button[type="button"] {
+  background-color: #bdc3c7;
+}
+
+.manager-dashboard-modal-actions button[type="button"]:hover {
+  background-color: #95a5a6;
+}
+
+/* Table */
+.manager-dashboard-table-wrapper {
+  overflow-x: auto;
+}
+
+.manager-dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.manager-dashboard-table th,
+.manager-dashboard-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.manager-dashboard-table th {
+  background-color: #34495e;
+  color: #fff;
+}
+
+.manager-dashboard-status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+/* .manager-dashboard-status.completed {
+  background-color: #2ecc71;
+}
+
+.manager-dashboard-status.in-progress {
+  background-color: #f39c12;
+}
+
+.manager-dashboard-status.pending {
+  background-color: #95a5a6;
+} */
+
+/* Status badges with professional colors */
+.manager-dashboard-status {
+  padding: 6px 12px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-block;
+  text-align: center;
+  min-width: 90px;
+}
+
+/* Completed - Professional green */
+.manager-dashboard-status.completed {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  box-shadow: 0 2px 6px rgba(39, 174, 96, 0.3);
+}
+
+/* In Progress - Modern blue instead of plain orange */
+.manager-dashboard-status.in-progress {
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  box-shadow: 0 2px 6px rgba(41, 128, 185, 0.3);
+}
+
+/* Pending - Elegant muted gray with purple tone */
+.manager-dashboard-status.pending {
+  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+  box-shadow: 0 2px 6px rgba(127, 140, 141, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.manager-dashboard-table td button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1abc9c;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.manager-dashboard-table td button:hover {
+  background-color: #16a085;
+}
+
+/* Empty State */
+.manager-dashboard-empty {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .manager-dashboard-body {
+    flex-direction: column;
+  }
+
+  .manager-dashboard-sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .manager-dashboard-sidebar ul {
+    display: flex;
+    gap: 15px;
+  }
+
+  .manager-dashboard-main {
+    padding: 10px;
+  }
+}

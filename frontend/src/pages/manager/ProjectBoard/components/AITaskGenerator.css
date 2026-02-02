@@ -1,0 +1,133 @@
+.ai-generator-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+}
+
+/* ===== Header ===== */
+.ai-generator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-generator-title {
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #0f172a;
+}
+
+.ai-generate-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ai-generate-btn:hover {
+  background: #1d4ed8;
+}
+
+.ai-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Subtitle ===== */
+.ai-generator-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* ===== Loading ===== */
+.ai-generator-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.ai-generator-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #cbd5e1;
+  border-top: 2px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Messages ===== */
+.ai-generator-success {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.ai-generator-error {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* ===== Results ===== */
+.ai-generator-results {
+  margin-top: 14px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 10px;
+}
+
+.ai-generator-results h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.ai-generator-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ai-generator-results li {
+  display: flex;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #1e293b;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.ai-generator-results li:last-child {
+  border-bottom: none;
+}
+
+.task-index {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.task-text {
+  flex: 1;
+}

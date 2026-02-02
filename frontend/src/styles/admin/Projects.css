@@ -1,0 +1,175 @@
+/* ===== Wrapper ===== */
+.admin-projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Header ===== */
+.admin-projects-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-projects-btn-primary {
+  background: #22c55e;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-projects-btn-primary:hover {
+  background: #16a34a;
+}
+
+/* ===== Filters ===== */
+.admin-projects-filters {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-projects-filters input,
+.admin-projects-filters select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  min-width: 220px;
+}
+
+.admin-projects-filters input:focus,
+.admin-projects-filters select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* ===== Card / Table ===== */
+.admin-projects-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.admin-projects-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-projects-table thead {
+  background: #2563eb;
+  color: white;
+}
+
+.admin-projects-table th,
+.admin-projects-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-projects-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-projects-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ===== Status Badges ===== */
+.admin-projects-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.admin-projects-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.admin-projects-badge.in-progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.admin-projects-badge.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ===== Actions ===== */
+.admin-projects-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-projects-btn-edit {
+  background: #3b82f6;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.admin-projects-btn-edit:hover {
+  background: #2563eb;
+}
+
+.admin-projects-btn-delete {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.admin-projects-btn-delete:hover {
+  background: #dc2626;
+}
+
+/* ===== No Data ===== */
+.admin-projects-no-data {
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+/* ===== Pagination ===== */
+.admin-projects-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.admin-projects-pagination button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.admin-projects-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-projects-pagination button:hover:not(:disabled) {
+  background: #f1f5f9;
+}

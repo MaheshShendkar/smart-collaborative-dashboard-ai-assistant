@@ -1,0 +1,451 @@
+/* ================== Root Variables ================== */
+:root {
+  --primary-bg: #1e293b;        /* Deep navy blue */
+  --secondary-bg: #334155;      /* Muted blue-gray */
+  --accent-color: #38bdf8;      /* Cyan accent */
+  --hover-accent: #67e8f9;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --transition: all 0.3s ease;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --radius: 10px;
+}
+
+/* ================== Top Navbar ================== */
+.top-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-bg);
+  color: var(--text-light);
+  padding: 0 1.8rem;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+/* Logo / Brand */
+.navbar-left .app-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.navbar-left .app-logo:hover {
+  color: var(--hover-accent);
+  transform: scale(1.03);
+}
+
+/* Right Side */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Notification Bell */
+.notification-bell {
+  position: relative;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: var(--transition);
+}
+
+.notification-bell:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.bell-icon {
+  font-size: 1.4rem;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: var(--danger);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 3px 6px;
+  line-height: 1;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+  position: absolute;
+  top: 64px;
+  right: 130px;
+  background: #ffffff;
+  color: #1e293b;
+  width: 320px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 0.9rem;
+  border-radius: 25px;
+  transition: var(--transition);
+}
+
+.profile-info:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+.profile-icon {
+  font-size: 1.2rem;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.profile-role {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Logout & Login Buttons */
+.logout-btn,
+.login-btn {
+  padding: 0.45rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  letter-spacing: 0.4px;
+}
+
+.logout-btn {
+  background: var(--danger);
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(239, 68, 68, 0.3);
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+  transform: translateY(-1px);
+}
+
+.login-btn {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(59, 130, 246, 0.3);
+}
+
+.login-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ================== Left Sidebar ================== */
+.left-sidebar {
+  width: 220px;
+  background: var(--secondary-bg);
+  color: var(--text-light);
+  padding-top: 1rem;
+  position: fixed;
+  top: 64px; /* below navbar */
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+  z-index: 900;
+  transition: width 0.3s ease;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  margin: 0.2rem 0;
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: var(--transition);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-color);
+  border-left: 4px solid var(--accent-color);
+}
+
+.sidebar-link.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent-color);
+  border-left: 4px solid var(--accent-color);
+  font-weight: 600;
+}
+
+/* Scrollbar Styling */
+.left-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.left-sidebar::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+/* ================== Dashboard Layout ================== */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 80px 30px 30px 30px;
+  flex-grow: 1;
+  background-color: #f8fafc;
+}
+
+/* ================== Pages ================== */
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+/* ================== Tables, Cards, and General Elements ================== */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.projects-table th {
+  background-color: var(--primary-bg);
+  color: #fff;
+  font-weight: 600;
+}
+
+.projects-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 992px) {
+  .left-sidebar {
+    width: 180px;
+  }
+
+  .main-content {
+    margin-left: 180px;
+  }
+
+  .navbar-right {
+    gap: 1rem;
+  }
+
+  .profile-name,
+  .profile-role {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 80px;
+  }
+
+  .notification-dropdown {
+    right: 60px;
+    width: 260px;
+  }
+}
+
+
+/* ===== Projects Page Styling ===== */
+
+.projects-page {
+  padding: 30px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin-left: 230px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* ===== Loading & Error States ===== */
+.error {
+  color: #e53e3e;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.projects-page p {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+/* ===== Table Styling ===== */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.projects-table th {
+  background-color: #3182ce;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.projects-table tr:hover {
+  background-color: #ebf8ff;
+  transition: 0.3s ease;
+}
+
+.projects-table td {
+  font-size: 15px;
+  color: #2d3748;
+}
+
+/* ===== Empty or Loading States ===== */
+.projects-page p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .projects-table thead {
+    display: none;
+  }
+
+  .projects-table,
+  .projects-table tbody,
+  .projects-table tr,
+  .projects-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .projects-table tr {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  .projects-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .projects-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 18px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: 600;
+    text-align: left;
+    color: #4a5568;
+  }
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

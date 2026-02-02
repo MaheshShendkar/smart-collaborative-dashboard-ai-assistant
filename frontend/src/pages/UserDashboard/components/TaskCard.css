@@ -1,0 +1,65 @@
+/* Card Container */
+.card {
+  background-color: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: default;
+  margin-left: 230px;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Task Title */
+.card h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Task Details */
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Icons Styling */
+.icon {
+  color: #2980b9;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    padding: 14px 16px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 0.9rem;
+  }
+}

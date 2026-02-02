@@ -1,0 +1,190 @@
+/* ===== Layout ===== */
+.projectboard-layout {
+  display: flex;
+  height: 100%;
+  background: #f5f7fb;
+}
+
+/* ===== Sidebar ===== */
+.projectboard-sidebar {
+  margin-left: 0;
+  width: 240px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.projectboard-sidebar-header {
+  margin-bottom: 20px;
+}
+
+.projectboard-back-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.projectboard-back-btn:hover {
+  color: white;
+}
+
+.projectboard-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.projectboard-icon {
+  font-size: 18px;
+}
+
+.projectboard-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Sidebar Nav ===== */
+.projectboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.projectboard-nav-item {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.projectboard-nav-item:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.projectboard-nav-item.active {
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+}
+
+/* ===== Main Area ===== */
+.projectboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fb;
+}
+
+/* ===== Topbar ===== */
+.projectboard-topbar {
+  height: 56px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectboard-topbar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.projectboard-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.projectboard-edit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.projectboard-edit-btn:hover {
+  background: #1d4ed8;
+}
+
+.projectboard-delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.projectboard-delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ===== Content ===== */
+.projectboard-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ===== AI Area ===== */
+.projectboard-ai-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Loading / Error ===== */
+.projectboard-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 10px;
+}
+
+.projectboard-spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  animation: projectboard-spin 1s linear infinite;
+}
+
+@keyframes projectboard-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.projectboard-error {
+  padding: 20px;
+  color: red;
+  font-weight: 500;
+}
+
+.projectboard-empty {
+  padding: 20px;
+  color: #6b7280;
+}

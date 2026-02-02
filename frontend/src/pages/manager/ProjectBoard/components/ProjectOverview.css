@@ -1,0 +1,357 @@
+/* 
+.po-dashboard-content, .po-dashboard-content * {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+.po-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.po-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+
+.po-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.po-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.po-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+.po-badges {
+  display: flex;
+  gap: 0.6rem;
+}
+.po-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  color: #fff;
+}
+
+
+.po-status-completed { background: #16a34a; }
+.po-status-progress { background: #3b82f6; }
+.po-status-pending { background: #f59e0b; }
+.po-status-hold { background: #6b7280; }
+.po-status-default { background: #9ca3af; }
+
+
+.po-priority-high { background: #dc2626; }
+.po-priority-medium { background: #eab308; }
+.po-priority-low { background: #22c55e; }
+.po-priority-default { background: #6b7280; }
+
+
+.po-section {
+  margin-bottom: 1.5rem;
+}
+.po-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1e293b;
+}
+.po-description {
+  color: #475569;
+  line-height: 1.5;
+}
+
+
+.po-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+
+.po-card {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  border: 1px solid #e5e7eb;
+}
+.po-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #111827;
+}
+.po-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.po-item {
+  display: flex;
+  justify-content: space-between;
+}
+.po-label {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+.po-value {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+
+.po-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #475569;
+}
+.po-spinner {
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: po-spin 1s linear infinite;
+  margin-bottom: 0.8rem;
+}
+@keyframes po-spin {
+  100% { transform: rotate(360deg); }
+}
+
+
+.po-error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #b91c1c;
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+.po-error-icon {
+  font-size: 1.2rem;
+}
+.po-error-text {
+  font-size: 0.95rem;
+  margin: 0;
+} */
+/* new code
+ */
+
+ /* ================= Base ================= */
+.po-wrapper,
+.po-wrapper * {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= States ================= */
+.po-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #475569;
+}
+
+.po-spinner {
+  width: 34px;
+  height: 34px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: po-spin 1s linear infinite;
+  margin-bottom: 0.8rem;
+}
+
+@keyframes po-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.po-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* ================= Layout ================= */
+.po-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ================= Header Card ================= */
+.po-header-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.po-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.po-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Right badges */
+.po-header-right {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ================= Badges ================= */
+.po-status,
+.po-priority {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Status colors */
+.po-status-completed {
+  background: #dcfce7;
+  color: #166534;
+}
+.po-status-inprogress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.po-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+.po-status-onhold {
+  background: #e5e7eb;
+  color: #374151;
+}
+.po-status-default {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* Priority colors */
+.po-priority-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.po-priority-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+.po-priority-low {
+  background: #dcfce7;
+  color: #166534;
+}
+.po-priority-default {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* ================= Description ================= */
+.po-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.po-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #0f172a;
+}
+
+.po-description {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* ================= Grid ================= */
+.po-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.3rem;
+}
+
+/* ================= Cards ================= */
+.po-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.po-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.po-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #0f172a;
+}
+
+/* Rows */
+.po-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 0.35rem 0;
+  color: #475569;
+}
+
+.po-row span:last-child {
+  font-weight: 600;
+  color: #0f172a;
+}
